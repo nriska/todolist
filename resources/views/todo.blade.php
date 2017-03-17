@@ -13,9 +13,11 @@
 				<ol>
 					@foreach($todo as $del)
 					<form action="{{ url('todo/'.$del->id_todo) }}" method="POST">
-						{{ csrf_field() }} {{ method_field('DELETE') }}
-						<li>{{ $del->item }}&nbsp;&nbsp;&nbsp;
-							<input type="hidden" name="_method" value="DELETE">
+						{{ csrf_field() }} 
+                        {{ method_field('delete') }}
+						<li>{{ $del->item }}
+                            &nbsp;&nbsp;&nbsp;
+							<input type="hidden" name="_method" value="delete">
 							<button type="submit" name="delete" class="btn btn-danger">X</button>
 						</li>
 					</form>
