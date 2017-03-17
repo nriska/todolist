@@ -21,6 +21,7 @@ class TodoController extends Controller
         $todo = Todo::all();
         return view('todo')->with('todo', $todo);
     }
+    
     public function destroy(request $request, Todo $del){
        
         $del->delete();
