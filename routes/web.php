@@ -11,11 +11,14 @@
 |
 */
 
+Route::get('todo', function(){
+	return view('todo');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('todo','TodoController@index');
-
-Route::post('todo','TodoController@store');
-
+Route::get('todo', 'TodoController@index');
+Route::post('todo', 'TodoController@store');
+Route::delete('todo/{del}', 'TodoController@destroy');
